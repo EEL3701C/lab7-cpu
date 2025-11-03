@@ -18,6 +18,7 @@ LOOP:
     BITSET:
     -- do stuff if its set
 
+    AFTER:
     -- how to write to table?
 END:
 NOP -- for breakpoint
