@@ -35,6 +35,7 @@ if not skip:
 while True:
     print(cpu)
     cont = False
+    done = False
     if not skip:
         while not cont:
             inp = input("Command: ")
@@ -46,15 +47,18 @@ while True:
                         raise ValueError()
                     
                     data = cpu._memory[addr]
-                    print(f"{hex(addr)}: {data}")
+                    print(f"{hex(addr)}: {hex(data)} ({data} in base 10)")
                 except ValueError:
                     print("Invalid memory address")
                     continue
-                
             if inp == "Q":
                 print("Stopping execution")
                 print(cpu)
                 exit()
+            if inp == "H":
+                menu()
+            if done:
+                continue
             if inp == "S" or inp == "":
                 cont = True
             if inp == "C":
@@ -62,13 +66,15 @@ while True:
                 skip = True
             if inp == "P":
                 print(cpu)
-            if inp == "H":
-                menu()
     try:
-        cpu.step()
+        if not done:
+            cpu.step()
     except Exception as e:
         if isinstance(e, EOFError):
-            exit()
+            print("Execution over: You can still probe memory. Input Q to quit.")
+            cont = False
+            skip = False
+            continue
         inst = cpu._program[cpu._index]
         print(f"Error in instruction: {inst}")
         print(e)

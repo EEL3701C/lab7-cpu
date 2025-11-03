@@ -228,7 +228,7 @@ class Instruction():
         tokens.pop(0) # remove operation
         if len(tokens) != arg_dict[op]:
             raise ValueError(
-                f"Line {num}: {op} expects {self.operation.arg_count}"
+                f"Line {num}: {op} expects {arg_dict[op]}"
                 f" arguments, got {len(tokens)}"
             )
 
