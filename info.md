@@ -79,11 +79,14 @@ This document contains information about the CPU's architecture, instructions, a
 - `LSR R1, IMM`: Logical Shift Right
   - This will shift R1 by IMM bits to the right. IMM must be within 0 to 7 inclusive.
 
+# Comments
+Comments can be declared with `--`. Comments can start anywhere in the line, and anything after the `--` will be ignored.
+
 # Directives
 
 All directives aside from labels should be at the beginning of the program for proper usage.
 
-Comments can be declared with `--`. Comments can start anywhere in the line, and anything after the `--` will be ignored.
+Directives are not apart of the instruction set architecture, they are assembler specific commands handled at assembly time to organize code and data, not executed by the CPU. These are the valid directives for our assembler.
 
 ## Labels
 Must be on a separate line from other code and must contain a colon. Labels must also be unique. Labels are **case-sensitive**.
