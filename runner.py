@@ -39,6 +39,7 @@ while True:
     if not skip:
         while not cont:
             inp = input("Command: ")
+            print() 
             inp = inp.strip().upper()
             if inp.find("X") != -1:
                 try:
