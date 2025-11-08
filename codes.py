@@ -609,6 +609,9 @@ def assemble(file_name):
         elif line.find(":") != -1:
             # get label name
             name = line.strip().replace(":", "")
+            # make sure label has no spaces
+            if " " in name:
+                raise ValueError(f"Label name cannot contain spaces, {name} does")
             # check if already in dictionary
             if name in labels:
                 raise ValueError(f"Labels must be unique, {name} was repeated")
