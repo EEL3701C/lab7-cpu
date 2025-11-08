@@ -21,4 +21,4 @@ LOOP:
     AFTER:
     -- how to write to table?
 END:
-NOP -- for breakpoint
+NOP -- for analyzing register and memory values
