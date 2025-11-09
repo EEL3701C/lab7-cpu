@@ -318,7 +318,7 @@ class CPU():
             self._zerof = False
 
         # vals > 127 indicate MSB is 1, so negative
-        if val < 127:
+        if val > 127:
             self._negativef = True
         else:
             self._negativef = False

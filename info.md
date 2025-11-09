@@ -74,10 +74,10 @@ This document contains information about the CPU's architecture, instructions, a
   - If R1 == IMM, sets zero flag and not negative flag
   - If R1 > IMM, sets neither flag
   - If R1 < IMM, sets negative flag
-- `LSL R1, IMM`: Logical Shift Left
-  - This will shift R1 by IMM bits to the left. IMM must be within 0 to 7 inclusive.
-- `LSR R1, IMM`: Logical Shift Right
-  - This will shift R1 by IMM bits to the right. IMM must be within 0 to 7 inclusive.
+- `LSL R1, R2, IMM`: Logical Shift Left
+  - This will shift R2 by IMM bits to the left and place the result in R1. IMM must be within 0 to 7 inclusive.
+- `LSR R1, R2, IMM`: Logical Shift Right
+  - This will shift R2 by IMM bits to the right and place the result in R1. IMM must be within 0 to 7 inclusive.
 
 # Comments
 Comments can be declared with `--`. Comments can start anywhere in the line, and anything after the `--` will be ignored.
